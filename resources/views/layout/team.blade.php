@@ -18,7 +18,9 @@
         <div class="mb-5 text-center">
             <h5 class="text-primary text-uppercase">The Team</h5>
             <h1 class="display-3 text-uppercase mb-0">Expert Trainers</h1>
-            <a class="btn btn-primary py-3 " href="{{ route('team-add') }}">Tambah tim</a>
+            @if (auth()->check() && auth()->user()->role == 0)
+                <a class="btn btn-primary py-3 " href="{{ route('team-add') }}">Tambah tim</a>
+            @endif
         </div>
         <div class="row g-5">
             @foreach ($teams as $team)
@@ -37,8 +39,11 @@
                             style="background: rgba(34, 36, 41, .9);">
                             <h5 class="text-uppercase text-light">{{ $team->nama }}</h5>
                             <p class="text-uppercase text-secondary m-0">{{ $team->role }}</p>
-                            <p><a class="btn btn-danger p-3 "
-                                    href="{{ route('team-delete', ['id' => $team->id]) }}">Hapus</a></p>
+
+                            @if (auth()->check() && auth()->user()->role == 0)
+                                <p><a class="btn btn-danger p-3 "
+                                        href="{{ route('team-delete', ['id' => $team->id]) }}">Hapus</a></p>
+                            @endif
                         </div>
                     </div>
                 </div>
