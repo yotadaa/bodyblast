@@ -58,7 +58,7 @@ class AdminController extends Controller
 
         // Flash a success message to the session
         $request->session()->flash('message', 'Success updating schedule');
-        
+
         // Redirect to the appropriate route
         return redirect()->route('class'); // Adjust this route name as needed
     }
@@ -73,6 +73,19 @@ class AdminController extends Controller
 
         $request->session()->flash('message', "success removing schedules");
         return redirect()->route('class');
+
+    }
+
+    public function testimonialDelete(Request $request, $id)
+    {
+
+        if (!auth()->check() || (auth()->check() && auth()->user()->role != 0)) {
+            return  redirect()->route('testimonial');
+        }
+        DB::table('testimonials')->where('id', $id)->delete();
+
+        $request->session()->flash('message', "success removing testimonials");
+        return redirect()->route('testimonial');
 
     }
 
@@ -104,9 +117,9 @@ class AdminController extends Controller
             ]);
             $request->session()->flash('message', "success adding testimonial");
             return redirect()->route('testimonial-add');
-        } 
+        }
         $request->session()->flash('message', "failed adding testimonial");
         return redirect()->route('testimonial-add');
-        
+
     }
 }

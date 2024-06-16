@@ -32,6 +32,7 @@ Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/team', [PageController::class, 'team'])->name('team');
 Route::get('/testimonial', [PageController::class, 'testimonial'])->name('testimonial');
 Route::get('/testimonial-add', [PageController::class, 'testimonialAdd'])->name('testimonial-add');
+Route::get('/testimonial-delete/{id}', [AdminController::class, 'testimonialDelete'])->name('testimonial-delete');
 Route::post('/testimonial-store', [AdminController::class, 'storeTestimonial'])->name('testimonial-store');
 
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
