@@ -53,6 +53,7 @@ class AuthController extends Controller
         // Session::flash("message", $request->nama.$request->email);
         try {
             $existingUser = DB::table("users")->where("email", $request->email)->exists();
+            
             if ($existingUser) {
                 Session::flash('error', 'Failed creating account, email exists');
                 return redirect()->route('register');
@@ -67,7 +68,7 @@ class AuthController extends Controller
                 'no_hp' => $request->nomor,
             ]);
             Session::flash('message', 'Registration successful! Please login. '.$request->name);
-            return redirect()->route('register'); // Redirect to login page
+            return redirect()->route('register');
         } catch (\Illuminate\Database\QueryException $e) {
             $errorMessage = 'Failed creating account.';
             if (env('APP_DEBUG')) {

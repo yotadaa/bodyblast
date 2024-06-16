@@ -15,6 +15,7 @@ return new class extends Migration
             $table->string("name");
             $table->string("message");
             $table->string("role");
+            $table->string("foto");
             $table->id()->unique();
             $table->timestamps();
         });
