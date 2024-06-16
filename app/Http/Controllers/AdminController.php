@@ -89,6 +89,19 @@ class AdminController extends Controller
 
     }
 
+    public function deleteTeam(Request $request, $id)
+    {
+
+        if (!auth()->check() || (auth()->check() && auth()->user()->role != 0)) {
+            return  redirect()->route('testimonial');
+        }
+        DB::table('experts')->where('id', $id)->delete();
+
+        $request->session()->flash('message', "success removing testimonials");
+        return redirect()->route('team');
+
+    }
+
     public function storeTestimonial(Request $request)
     {
         // Check if the user is authenticated and has the appropriate role
@@ -107,7 +120,7 @@ class AdminController extends Controller
         if ($request->hasFile('file')) {
             $image = $request->file('file');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $image->storeAs('public/images/', $imageName); // Store the image in the 'public/images' directory
+            $image->storeAs('public/images  /', $imageName); // Store the image in the 'public/images' directory
             $request->session()->flash('message', "File");
             DB::table('testimonials')->insert([
                 'name' => $request->name,
@@ -120,6 +133,39 @@ class AdminController extends Controller
         }
         $request->session()->flash('message', "failed adding testimonial");
         return redirect()->route('testimonial-add');
+
+    }
+
+    public function storeTeam(Request $request)
+    {
+        // Check if the user is authenticated and has the appropriate role
+        if (!auth()->check() || (auth()->check() && auth()->user()->role != 0)) {
+            return redirect()->route('teams'); // Adjust this route name as needed
+        }
+
+        // Validate the input
+        $request->validate([
+            'name' => 'required|string',
+            'role' => 'required|string',
+            'nomor' => 'required|string',
+            'file' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Validate the image
+        ]);
+        $request->session()->flash('message', "Validating");
+        if ($request->hasFile('file')) {
+            $image = $request->file('file');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->storeAs('public/images/', $imageName); // Store the image in the 'public/images' directory
+            DB::table('experts')->insert([
+                'nama' => $request->name,
+                'role' => $request->role,
+                'nomor' => $request->nomor,
+                'foto' => 'storage/images/'.$imageName
+            ]);
+            $request->session()->flash('message', "success adding experts");
+            return redirect()->route('team-add');
+        }
+        $request->session()->flash('message', "failed adding experts");
+        return redirect()->route('team-add');
 
     }
 }

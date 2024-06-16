@@ -89,10 +89,9 @@
                             Sign In / Sign Up
                         @endif
                     </a>
+                </nav>
             </div>
-            </nav>
         </div>
-    </div>
     </div>
 
     @yield('body')

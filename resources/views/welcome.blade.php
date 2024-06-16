@@ -57,7 +57,7 @@
                     <h3 class="text-uppercase my-4">Bela Diri</h3>
                     <p>Bertujuan untuk mengajarkan teknik-teknik fisik, memperkuat karakter, kedisiplinan, dan kontrol
                         diri.</p>
-                    <a class="text-uppercase" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                    <a class="text-uppercase" href="/beladiri">Read More <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
@@ -65,7 +65,7 @@
                     <i class="flaticon-barbell display-1 text-primary"></i>
                     <h3 class="text-uppercase my-4">Weight Loss & Cardio</h3>
                     <p>Latihan cardio termasuk berlari, bersepeda, berenang, dan melompat tali.</p>
-                    <a class="text-uppercase" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                    <a class="text-uppercase" href="/cardio">Read More <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
@@ -74,7 +74,7 @@
                     <h3 class="text-uppercase my-4">Build Muscle</h3>
                     <p>merangsang pertumbuhan otot melalui kerusakan mikroskopis pada serat otot yang kemudian
                         diperbaiki dan diperbesar melalui mekanisme pemulihan tubuh.</p>
-                    <a class="text-uppercase" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                    <a class="text-uppercase" href="/muscle">Read More <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
             <div class="col-lg-12 col-md-6 text-center">

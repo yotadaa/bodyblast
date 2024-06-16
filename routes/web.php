@@ -29,7 +29,12 @@ Route::get('/class-edit/{id}', [PageController::class, 'classEdit'])->name('clas
 Route::post('/class-update/{id}', [AdminController::class, 'updateClass'])->name('class-modify');
 
 Route::get('/about', [PageController::class, 'about'])->name('about');
+
 Route::get('/team', [PageController::class, 'team'])->name('team');
+Route::get('/team-add', [PageController::class, 'teamAdd'])->name('team-add');
+Route::post('/team-store', [AdminController::class, 'storeTeam'])->name('team-store');
+Route::get('/team-delete/{id}', [AdminController::class, 'deleteTeam'])->name('team-delete');
+
 Route::get('/testimonial', [PageController::class, 'testimonial'])->name('testimonial');
 Route::get('/testimonial-add', [PageController::class, 'testimonialAdd'])->name('testimonial-add');
 Route::get('/testimonial-delete/{id}', [AdminController::class, 'testimonialDelete'])->name('testimonial-delete');
@@ -43,3 +48,7 @@ Route::get('/actionlogout', [AuthController::class, 'actionlogout'])->name('acti
 //REGISTER
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/actionregister', [AuthController::class, 'actionregister'])->name('actionregister');
+
+Route::get('/beladiri', [PageController::class, 'beladiri'])->name('beladiri');
+Route::get('/cardio', [PageController::class, 'cardio'])->name('cardio');
+Route::get('/muscle', [PageController::class, 'muscle'])->name('muscle');

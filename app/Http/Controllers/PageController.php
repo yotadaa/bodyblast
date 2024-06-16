@@ -57,7 +57,21 @@ class PageController extends Controller
         if (!auth()->check()) {
             return redirect()->route('index');
         }
-        return view("layout.team");
+
+        $teams = DB::table("experts")->get();
+        return view("layout.team", ["teams" => $teams]);
+    }
+    public function teamAdd() {
+        if (!auth()->check()) {
+            return redirect()->route('index');
+        }
+
+        if (auth()->check() && auth()->user()->role != 0) {
+            return redirect()->route('team');
+
+        }
+
+        return view("layout.team-add");
     }
 
     public function testimonial() {
@@ -86,5 +100,25 @@ class PageController extends Controller
             return redirect()->route('index');
         }
         return view("layout.contact");
+    }
+    public function beladiri() {
+        if (!auth()->check()) {
+            return redirect()->route('index');
+        }
+        return view("layout.beladiri");
+    }
+
+    public function cardio() {
+        if (!auth()->check()) {
+            return redirect()->route('index');
+        }
+        return view("layout.cardio");
+    }
+
+    public function muscle() {
+        if (!auth()->check()) {
+            return redirect()->route('index');
+        }
+        return view("layout.muscle");
     }
 }
