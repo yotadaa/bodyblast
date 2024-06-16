@@ -43,42 +43,6 @@
                     </div>
                 </div>
             @endforeach
-            {{-- <div class="col-lg-4 col-md-6">
-                <div class="team-item position-relative">
-                    <div class="position-relative overflow-hidden rounded">
-                        <img class="img w-100" src="img/lat2.jpg" alt="">
-                        <div class="team-overlay">
-                            <div class="d-flex align-items-center justify-content-start">
-                                <a class="btn btn-light btn-square rounded-circle mx-1" href="#"><i
-                                        class="fab fa-whatsapp"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="position-absolute start-0 bottom-0 w-100 rounded-bottom text-center p-4"
-                        style="background: rgba(34, 36, 41, .9);">
-                        <h5 class="text-uppercase text-light">Tiara dan Dhani</h5>
-                        <p class="text-uppercase text-secondary m-0">Trainer</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="team-item position-relative">
-                    <div class="position-relative overflow-hidden rounded">
-                        <img class="img w-100" src="img/lat3.jpg" alt="">
-                        <div class="team-overlay">
-                            <div class="d-flex align-items-center justify-content-start">
-                                <a class="btn btn-light btn-square rounded-circle mx-1" href="#"><i
-                                        class="fab fa-whatsapp"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="position-absolute start-0 bottom-0 w-100 rounded-bottom text-center p-4"
-                        style="background: rgba(34, 36, 41, .9);">
-                        <h5 class="text-uppercase text-light">Widia</h5>
-                        <p class="text-uppercase text-secondary m-0">Trainer</p>
-                    </div>
-                </div>
-            </div> --}}
         </div>
     </div>
 @endsection
